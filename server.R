@@ -13,6 +13,7 @@ library(lubridate)
 
 app_name <- 'John Hutchinson visualizaer' # chosen by user
 app_client_id  <- '24629' # an integer, assigned by Strava
+#put app_secret in a .Rprofile file in the same folder as this app
 
 stoken <- httr::config(token = strava_oauth(app_name, app_client_id, app_secret, app_scope="view_private", cache=TRUE))
 my_acts <- get_activity_list(stoken)
