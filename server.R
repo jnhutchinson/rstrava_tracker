@@ -25,7 +25,7 @@ commutedat <- commutedat %>% mutate(date=as.Date(date))
 todaysdate <- format(Sys.time(), "%Y-%m-%d")
 defaultstartdate <- as.Date(todaysdate)-30
 
-# Define server logic required to draw a histogram
+# Define server logic required to summarize commute distances between two dates
 shinyServer(function(input, output) {
   output$thedate <- renderText(as.character(filter(commutedat, date>input$start_date & 
                                                      date<input$end_date & 
